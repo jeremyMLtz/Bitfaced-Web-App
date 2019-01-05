@@ -33,7 +33,7 @@ class HomeContent extends React.Component {
   render() {
     return (
       <div>
-        <MediaQuery orientation="portrait">
+        <MediaQuery orientation="portrait" minDeviceWidth={500}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesPortrait}
@@ -41,7 +41,15 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="landscape" maxDeviceHeight={767}>
+        <MediaQuery orientation="portrait" maxDeviceWidth={501}>
+          <img
+            id="bitfaced-logo-img"
+            style={logoStylesBigLandscape}
+            alt="BitFaced Podcast Logo with Eric and Tyler"
+            src={HomeContent.LOGO_URL}
+          />
+        </MediaQuery>
+        <MediaQuery orientation="landscape" maxDeviceWidth={840}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesLandscape}
@@ -49,7 +57,7 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="landscape" minDeviceHeight={768}>
+        <MediaQuery orientation="landscape" minDeviceWidth={841}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesBigLandscape}
